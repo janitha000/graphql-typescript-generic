@@ -1,0 +1,12 @@
+.vehicle {
+  display: flex;
+  justify-content: space-between;
+  background-color: #acabab;
+  margin: auto;
+  width: 40%;
+  margin: 0.5rem 0rem;
+  padding: 1rem;
+  border-radius: 10px; }
+
+.vehicle__item > span {
+  font-weight: 800; }

@@ -1,0 +1,14 @@
+.vehicle {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(172, 171, 171);
+    margin: auto;
+    width: 40%;
+    margin: 0.5rem 0rem;
+    padding: 1rem;
+    border-radius: 10px;
+
+    &__item > span{
+        font-weight: 800;
+    }
+}
