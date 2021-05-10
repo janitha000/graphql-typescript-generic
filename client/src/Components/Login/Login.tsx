@@ -1,58 +1,27 @@
-import React, { useReducer, useState } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import useInput from '../../Hooks/useInput'
 import './Login.css'
 
+import { UserContext } from '../../Contexts/UserContext'
+
 import { login } from './LoginService';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
-const loginReducer = (state: LoginState, action: LoginAction) => {
-    switch (action.type) {
-        case 'login':
-            return {
-                ...state,
-                loading: true,
-            }
-        case 'loggedIn':
-            return {
-                ...state,
-                loading: false
-            }
-        case 'error':
-            return {
-                ...state,
-                loading: false
-            }
-    }
-    return state;
-}
-
-const iniialState: LoginState = {
-    username: "",
-    password: "",
-    loading: false,
-    variant: "login"
-}
-
-interface LoginState {
-    username: string,
-    password: string,
-    loading: boolean,
-    variant: "login" | "register"
-}
-
-// interface LoginAction {
-//     type: string,
-//     payload?: string
-// }
-
-type LoginAction = | { type: "login" | "loggedIn" | "error" } | { type: "field", payload: string }
 
 const Login: React.FC = () => {
-    const [state, dispatch] = useReducer(loginReducer, iniialState)
+    const { state, dispatch } = useContext(UserContext)
 
     const { value: username, bind: usernameBind, reset: resetUserName } = useInput("")
     const { value: password, bind: passwordBind, reset: resetPassword } = useInput("")
 
     const { loading } = state;
+
+
+
+    const setLocalStorage = (username: string) => {
+        localStorage.setItem("user", username)
+    }
 
     const onSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -60,7 +29,11 @@ const Login: React.FC = () => {
             dispatch({ type: 'login' })
             let result = await login({ username, password })
             console.log(result);
-            dispatch({ type: 'loggedIn' })
+            dispatch({ type: 'loggedIn', payload: username as string })
+
+            setLocalStorage(username as string)
+
+
         }
         catch (err) {
             console.log(err)
@@ -85,6 +58,7 @@ const Login: React.FC = () => {
                 <input type="submit" value={getValue()} disabled={loading} />
 
             </form>
+            <Link to='/' > Home </Link>
 
         </div>
     )

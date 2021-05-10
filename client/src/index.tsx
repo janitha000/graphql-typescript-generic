@@ -6,16 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Vehicles from './Components/Vehicles';
 import Login from './Components/Login/Login'
+import { UserContextProvider } from './Contexts/UserContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Switch>
-        <Route path='/vehicles' component={Vehicles} />
-        <Route path='/login' component={Login} />
-        <Route path='/' component={App} />
-      </Switch>
-    </BrowserRouter>
+    <UserContextProvider>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/vehicles' component={Vehicles} />
+          <Route path='/login' component={Login} />
+          <Route path='/' component={App} />
+        </Switch>
+      </BrowserRouter>
+    </UserContextProvider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
