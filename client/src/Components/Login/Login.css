@@ -1,0 +1,46 @@
+.login {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.login > form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 400px;
+}
+
+.login > form > input {
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  font-size: large;
+  text-align: center;
+}
+
+.login__input > input {
+  padding: .5rem;
+  margin-top: 0.2rem;
+}
+/*# sourceMappingURL=Login.css.map */

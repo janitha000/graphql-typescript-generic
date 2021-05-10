@@ -9,6 +9,7 @@ const App: React.FC = (): JSX.Element => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      console.log('called')
       setTime(new Date(Date.now()));
     }, 1000);
 

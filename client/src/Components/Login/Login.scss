@@ -1,0 +1,38 @@
+.login {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    & >  form {
+        display: flex;
+        flex-direction: column;
+        min-width: 400px;
+
+        & > input {
+            max-width: 100px;
+            margin-left : auto;
+            margin-right: auto;
+        }
+
+    }
+
+    
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        font-size: large;
+        text-align: center;
+    
+        & > input {
+            padding: .5rem;
+            margin-top: 0.2rem;
+        }
+
+        
+    }
+
+
+}

@@ -1,7 +1,7 @@
-import React from 'react'
+import useInput from '../Hooks/useInput'
 import Vehicle from './Vehicle'
 
-type Vehicle = {
+export type Vehicle = {
     name: string,
     year: number,
     type: "Audi" | "BMW" | "Benz",
@@ -9,6 +9,17 @@ type Vehicle = {
 }
 
 const Vehicles: React.FC = () => {
+    const { value: name, bind: nameBind } = useInput("")
+    const { value: year, bind: yearBind } = useInput(0)
+    const { value: type, bind: typeBind } = useInput(0)
+    const { value: price, bind: priceBind } = useInput("")
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        console.log(name)
+    }
+
+
     const Vehicles: Vehicle[] = [
         {
             name: "A4",
@@ -23,11 +34,22 @@ const Vehicles: React.FC = () => {
         }
     ]
     return (
-        <div>
-            {Vehicles.map(({ name, year, type, price }) => (
-                <Vehicle name={name} type={type} price={price} year={year} />
-            ))}
-        </div>
+        <>
+            <div className="vehicles">
+                {Vehicles.map(({ name, year, type, price }) => (
+                    <Vehicle name={name} type={type} price={price} year={year} key={name} />
+                ))}
+            </div>
+            <div className="vehicles__form">
+                <form onSubmit={handleSubmit}>
+                    <label>Name: <input type="text" {...nameBind} /></label>
+                    <label>Type: <input type="text" {...typeBind} /></label>
+                    <label>Year: <input type="text" {...yearBind} /></label>
+                    <label>Price: <input type="text" {...priceBind} /></label>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </>
     )
 }
 
