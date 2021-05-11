@@ -1,14 +1,27 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 import Vehicles from './Components/Vehicles'
 import { UserContext } from './Contexts/UserContext';
+import UseEventHandler from './Hooks/useEventListener';
 
 const App: React.FC = (): JSX.Element => {
   const [time, setTime] = useState<Date>(() => new Date(Date.now()));
   const { state, dispatch } = useContext(UserContext)
   let didRun = useRef(false)
+
+  const handlerCallback = useCallback(() => {
+    alert('clicked from callback')
+  }, [])
+
+  UseEventHandler({ eventType: 'click', handler: handlerCallback })
+
+  // UseEventHandler({
+  //   eventType: "click", handler: () => {
+  //     alert('clicked')
+  //   }
+  // })
 
   const { username } = state;
 

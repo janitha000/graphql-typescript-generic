@@ -16,4 +16,5 @@ const useInput = (initialValue: string | number) => {
     }
 }
 
+
 export default useInput
