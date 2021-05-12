@@ -5,6 +5,7 @@ import { graphqlHTTP } from 'express-graphql';
 import cors from 'cors';
 
 import { schema } from './Schema'
+import LoggingMiddleware from './MIddleware/LoggingMiddleware'
 
 const graphQL = graphqlHTTP({
     schema,
@@ -15,6 +16,7 @@ const main = async () => {
     const app = express();
     app.use(cors());
     app.use(express.json());
+    app.use(LoggingMiddleware)
 
     app.use('/graphql', graphQL);
 
