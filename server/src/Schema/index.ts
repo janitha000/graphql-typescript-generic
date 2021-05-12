@@ -21,5 +21,3 @@ export const schema = new GraphQLSchema({
     query: RootQuery,
     mutation: Mutation
 })
-
-
