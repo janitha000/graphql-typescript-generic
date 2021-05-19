@@ -6,10 +6,17 @@ import cors from 'cors';
 
 import { schema } from './Schema'
 import LoggingMiddleware from './MIddleware/LoggingMiddleware'
+import DataLoader from 'dataloader';
+import { BrandLoader } from './Schema/DataLoaders/Brand';
+
+const loaders = {
+    BrandLoader
+}
 
 const graphQL = graphqlHTTP({
     schema,
     graphiql: true,
+    context: { loaders },
 });
 
 const main = async () => {

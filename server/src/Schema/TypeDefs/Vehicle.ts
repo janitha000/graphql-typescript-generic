@@ -1,4 +1,5 @@
 import { GraphQLID, GraphQLInputObjectType, GraphQLInt, GraphQLObjectType, GraphQLString } from "graphql";
+import { BRANDS, BrandType } from "./Brand";
 
 export const VehicleType = new GraphQLObjectType({
     name: "Vehicle",
@@ -7,7 +8,11 @@ export const VehicleType = new GraphQLObjectType({
         name: { type: GraphQLString },
         year: { type: GraphQLInt },
         type: { type: GraphQLString },
-        price: { type: GraphQLInt }
+        price: { type: GraphQLInt },
+        brandFounded: {
+            type: GraphQLInt,
+            resolve: (parent) => getBrandFound(parent.type)
+        }
     })
 })
 
@@ -26,7 +31,7 @@ export const VEHICLES: Vehicle[] = [
     {
         name: "A4",
         year: 2020,
-        type: "Audi",
+        type: "AUDI",
         price: 25000
     },
     {
@@ -58,4 +63,8 @@ export interface VehicleInput {
     year: number,
     type: string,
     price?: number
+}
+
+const getBrandFound = (type: string): number => {
+    return BRANDS.filter(x => x.name === type)[0].founded;
 }
