@@ -66,5 +66,6 @@ export interface VehicleInput {
 }
 
 const getBrandFound = (type: string): number => {
+    console.log("taking founded for " + type)
     return BRANDS.filter(x => x.name === type)[0].founded;
 }

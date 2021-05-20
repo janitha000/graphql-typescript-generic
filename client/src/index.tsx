@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -8,15 +8,22 @@ import Vehicles from './Components/Vehicles';
 import Login from './Components/Login/Login'
 import { UserContextProvider } from './Contexts/UserContext';
 
+const ManufacturerComponent = React.lazy(() => import('./Components/VehicleManufacturer/VehicleManufacturer'));
+
+
 ReactDOM.render(
   <React.StrictMode>
     <UserContextProvider>
       <BrowserRouter>
-        <Switch>
-          <Route path='/vehicles' component={Vehicles} />
-          <Route path='/login' component={Login} />
-          <Route path='/' component={App} />
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route path='/vehicles' component={Vehicles} />
+            <Route path='/login' component={Login} />
+            <Route path='/man' component={ManufacturerComponent} />
+            <Route path='/' component={App} />
+          </Switch>
+        </Suspense>
+
       </BrowserRouter>
     </UserContextProvider>
 
