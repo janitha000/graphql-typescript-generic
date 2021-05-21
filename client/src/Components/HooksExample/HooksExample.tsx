@@ -9,6 +9,7 @@ const HooksExample: React.FC = () => {
     const func = useCallback(() => {
         console.log('function executed')
     }, [])
+    //removing these hooks will re render useeffect every time on the child component
 
     const notMemoizedValue = (age: number) => {
         console.log('recalculating the value')
