@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import UseEventHandler from '../Hooks/useEventListener'
 import useInput from '../Hooks/useInput'
 import Vehicle from './Vehicle'
@@ -15,6 +16,10 @@ const Vehicles: React.FC = () => {
     const { value: year, bind: yearBind } = useInput(0)
     const { value: type, bind: typeBind } = useInput(0)
     const { value: price, bind: priceBind } = useInput("")
+
+    let refValue = useRef("janitha")
+    const [renderOnce, setRenderOnce] = useState(false)
+
 
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -57,6 +62,9 @@ const Vehicles: React.FC = () => {
                     <input type="submit" value="Submit" />
                 </form>
             </div>
+            <p>This is ref value {refValue.current}</p> <button onClick={() => refValue.current = "Vindya"}>Click to change Ref Value</button>
+            <button onClick={() => setRenderOnce((x) => !x)}>Render</button>
+
 
         </>
     )

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Vehicles from './Components/Vehicles';
 import Login from './Components/Login/Login'
 import { UserContextProvider } from './Contexts/UserContext';
+import HooksExample from './Components/HooksExample/HooksExample';
 
 const ManufacturerComponent = React.lazy(() => import('./Components/VehicleManufacturer/VehicleManufacturer'));
 
@@ -20,6 +21,7 @@ ReactDOM.render(
             <Route path='/vehicles' component={Vehicles} />
             <Route path='/login' component={Login} />
             <Route path='/man' component={ManufacturerComponent} />
+            <Route path='/hooks' component={HooksExample} />
             <Route path='/' component={App} />
           </Switch>
         </Suspense>

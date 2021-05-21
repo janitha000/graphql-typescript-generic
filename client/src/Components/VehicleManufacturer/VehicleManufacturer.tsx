@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useFetch from "../../Hooks/useFetch"
 
 interface VehicleManufacturer {
@@ -18,6 +19,7 @@ interface APIResponse {
 
 const VehicleManufacturer: React.FC = () => {
     const { data, loading }: APIResponse = useFetch({ url: 'https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json' })
+    const [renderOnce, setRenderOnce] = useState(false)
 
     let Results = data.Results;
     if (loading) return <div>Loading...</div>
@@ -26,15 +28,18 @@ const VehicleManufacturer: React.FC = () => {
     console.log(Results)
 
     return (
-        <div className="vehicleM">
-            {Results.map((item) => (
-                <div className="vehicleM__item">
-                    <p>Country: {item.Country}</p>
-                    <p>Company Name: {item.Mfr_CommonName}</p>
-                </div>
-            ))}
+        <>
+            <button onClick={() => setRenderOnce((x) => !x)}>Render</button>
+            <div className="vehicleM">
+                {Results.map((item) => (
+                    <div className="vehicleM__item">
+                        <p>Country: {item.Country}</p>
+                        <p>Company Name: {item.Mfr_CommonName}</p>
+                    </div>
+                ))}
 
-        </div>
+            </div>
+        </>
     )
 
 
