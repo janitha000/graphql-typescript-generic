@@ -8,6 +8,7 @@ import Vehicles from './Components/Vehicles';
 import Login from './Components/Login/Login'
 import { UserContextProvider } from './Contexts/UserContext';
 import HooksExample from './Components/HooksExample/HooksExample';
+import Count from './Components/Count/Count';
 
 const ManufacturerComponent = React.lazy(() => import('./Components/VehicleManufacturer/VehicleManufacturer'));
 
@@ -22,6 +23,7 @@ ReactDOM.render(
             <Route path='/login' component={Login} />
             <Route path='/man' component={ManufacturerComponent} />
             <Route path='/hooks' component={HooksExample} />
+            <Route path='/count' component={Count} />
             <Route path='/' component={App} />
           </Switch>
         </Suspense>
