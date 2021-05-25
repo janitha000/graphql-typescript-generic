@@ -1,0 +1,54 @@
+.converter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background: #c9c9c9;
+}
+
+.converter__container {
+  height: 300px;
+  width: 300px;
+  background: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#21caca));
+  background: linear-gradient(to right, #ffffff, #21caca);
+  padding: 1rem;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.converter__container--equal {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.converter__container > span {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.converter__container > p {
+  text-align: center;
+  font-size: 1rem;
+}
+/*# sourceMappingURL=Converter.css.map */

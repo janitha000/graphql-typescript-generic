@@ -5,6 +5,11 @@ const HooksExample: React.FC = () => {
     const [state, setState] = useState(false)
     const [age, setAge] = useState(50)
 
+    const [onlyDefault, setOnlyDefault] = useState(() => {
+        console.log('calculating default value')
+        return 50;
+    })
+
     const val = useMemo(() => 50, []);
     const func = useCallback(() => {
         console.log('function executed')

@@ -1,0 +1,36 @@
+@import '_global';
+
+.converter{
+    @include center();
+    background: rgb(201, 201, 201);
+
+    &__container {
+        height: 300px;
+        width: 300px;
+        background: linear-gradient(to right, $background-color2, $background-color1);
+        padding : 1rem;
+        border-radius: 10px;
+
+        @include center_coloumn;
+
+        &--equal{
+            align-items: center;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        & > span {
+            text-align: center;
+            font-size: 3rem;   
+            margin-bottom: 0.5rem;
+        }
+
+        & > p {
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+    
+}

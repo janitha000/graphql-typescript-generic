@@ -11,6 +11,7 @@ import HooksExample from './Components/HooksExample/HooksExample';
 import Count from './Components/Count/Count';
 
 const ManufacturerComponent = React.lazy(() => import('./Components/VehicleManufacturer/VehicleManufacturer'));
+const Converter = React.lazy(() => import('./Components/Converter/Converter'));
 
 
 ReactDOM.render(
@@ -24,6 +25,7 @@ ReactDOM.render(
             <Route path='/man' component={ManufacturerComponent} />
             <Route path='/hooks' component={HooksExample} />
             <Route path='/count' component={Count} />
+            <Route path='/convert' component={Converter} />
             <Route path='/' component={App} />
           </Switch>
         </Suspense>
