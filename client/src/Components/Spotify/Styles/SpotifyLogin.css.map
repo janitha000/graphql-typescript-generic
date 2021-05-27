@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,QAAQ,CAAC;EACL,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,SAAS;CAapB;;AAfD,AAII,QAJI,GAIA,CAAC,CAAC;EACF,gBAAgB,EAAE,OAAgB;EAClC,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,MAAM;EACf,eAAe,EAAE,IAAI;EACrB,aAAa,EAAE,IAAI;EACnB,SAAS,EAAE,IAAI;EACf,KAAK,ECbD,IAAI;CDeX",
+    "sources": [
+        "SpotifyLogin.scss",
+        "_global.scss"
+    ],
+    "names": [],
+    "file": "SpotifyLogin.css"
+}

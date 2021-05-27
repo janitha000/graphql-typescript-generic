@@ -9,6 +9,8 @@ import Login from './Components/Login/Login'
 import { UserContextProvider } from './Contexts/UserContext';
 import HooksExample from './Components/HooksExample/HooksExample';
 import Count from './Components/Count/Count';
+import Spotify from './Components/Spotify/Spotify';
+import SpotifyLoginCallback from './Components/Spotify/Login/SpotifyLoginCallback';
 
 const ManufacturerComponent = React.lazy(() => import('./Components/VehicleManufacturer/VehicleManufacturer'));
 const Converter = React.lazy(() => import('./Components/Converter/Converter'));
@@ -26,6 +28,10 @@ ReactDOM.render(
             <Route path='/hooks' component={HooksExample} />
             <Route path='/count' component={Count} />
             <Route path='/convert' component={Converter} />
+            <Route path='/spotify' component={Spotify} />
+            <Route path='/spotifycallback' component={SpotifyLoginCallback} />
+
+            spotifycallback
             <Route path='/' component={App} />
           </Switch>
         </Suspense>

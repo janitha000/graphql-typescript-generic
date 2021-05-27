@@ -1,0 +1,16 @@
+.sptifyL {
+  width: 200px;
+  margin: 2rem auto;
+}
+
+.sptifyL > a {
+  background-color: #2fd32f;
+  min-width: 100px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #fff;
+}
+/*# sourceMappingURL=SpotifyLogin.css.map */
