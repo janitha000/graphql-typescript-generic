@@ -25,14 +25,12 @@ const VehicleManufacturer: React.FC = () => {
     if (loading) return <div>Loading...</div>
     if (!Results || Results.length === 0) return <div>No Content Found</div>
 
-    console.log(Results)
-
     return (
         <>
             <button onClick={() => setRenderOnce((x) => !x)}>Render</button>
             <div className="vehicleM">
-                {Results.map((item) => (
-                    <div className="vehicleM__item">
+                {Results.map((item, i) => (
+                    <div className="vehicleM__item" key={i}>
                         <p>Country: {item.Country}</p>
                         <p>Company Name: {item.Mfr_CommonName}</p>
                     </div>

@@ -7,8 +7,9 @@ interface props {
 }
 
 const Artist: React.FC<props> = ({ name, popularity, image }) => {
+    if (!image || image.length === 0) return null
     return (
-        image && image.length > 0 && <div className="spotify__artist">
+        <div className="spotify__artist">
 
             <img src={image[0].url} alt="" />
             <p>{name}</p>
