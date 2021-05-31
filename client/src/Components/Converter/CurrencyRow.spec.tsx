@@ -20,16 +20,12 @@ describe('Currency row tests', () => {
         const { getByRole } = render(<CurrencyRow {...props} />)
         expect(getByRole('spinbutton')).toBeVisible()
     })
-    it.only('should fire input row', async () => {
+    it('should fire input row', async () => {
         const { getByRole, getByPlaceholderText, container } = render(<CurrencyRow {...props} />)
-        const input = container.firstChild
-
-        console.log(input)
         fireEvent.change(getByPlaceholderText('1'), {
             target: { value: 12 }
         })
-        screen.debug()
-        //expect(mockonInputChange).toHaveBeenCalledTimes(1)
+        expect(mockonInputChange).toHaveBeenCalledTimes(1)
     })
     it('should show select options', () => {
         const { getByRole } = render(<CurrencyRow {...props} />)

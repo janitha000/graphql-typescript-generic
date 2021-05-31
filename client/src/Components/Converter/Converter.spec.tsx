@@ -5,7 +5,6 @@ import { mount, shallow } from 'enzyme'
 import CurrencyRow from './CurrencyRow'
 
 
-
 describe('Convert component testing', () => {
     it('renders without crashing', async () => {
         const { queryByText } = render(<Converter />)
