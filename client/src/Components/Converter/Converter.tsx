@@ -68,8 +68,6 @@ const iniialState: ConverterState = {
 const Converter: React.FC = () => {
     const [state, dispatch] = useReducer(converterReducer, iniialState)
 
-    console.log(state.inputValue)
-
     useEffect(() => {
         fetch(url).then(res => res.json()).then((data: ApiResponse) => {
             let toCurrency = [...Object.keys(data!.rates)][0]

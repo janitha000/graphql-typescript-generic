@@ -11,6 +11,7 @@ import HooksExample from './Components/HooksExample/HooksExample';
 import Count from './Components/Count/Count';
 import Spotify from './Components/Spotify/Spotify';
 import SpotifyLoginCallback from './Components/Spotify/Login/SpotifyLoginCallback';
+import TODO from './Components/ToDo/ToDo';
 
 const ManufacturerComponent = React.lazy(() => import('./Components/VehicleManufacturer/VehicleManufacturer'));
 const Converter = React.lazy(() => import('./Components/Converter/Converter'));
@@ -30,6 +31,7 @@ ReactDOM.render(
             <Route path='/convert' component={Converter} />
             <Route path='/spotify' component={Spotify} />
             <Route path='/spotifycallback' component={SpotifyLoginCallback} />
+            <Route path='/todo' component={TODO} />
 
             spotifycallback
             <Route path='/' component={App} />

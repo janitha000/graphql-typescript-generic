@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '../../custom-render'
 import userEvent from '@testing-library/user-event'
 import Converter from './Converter'
 import { mount, shallow } from 'enzyme'
@@ -27,9 +27,9 @@ describe('Convert component testing', () => {
         //console.log(getAllByRole('spinbutton'))
         //expect(getAllByRole('spinbutton')[1]).toHaveValue('1.2')
     })
-    it.skip('should have correct values on other input', () => {
-        const converter = shallow(<Converter />)
-        expect(converter.contains('Converter')).toEqual(true)
-        expect(converter.exists(CurrencyRow)).toEqual(true)
-    })
+    // it.skip('should have correct values on other input', () => {
+    //     const converter = shallow(<Converter />)
+    //     expect(converter.contains('Converter')).toEqual(true)
+    //     expect(converter.exists(CurrencyRow)).toEqual(true)
+    // })
 })

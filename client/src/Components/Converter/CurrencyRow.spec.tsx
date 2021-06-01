@@ -35,10 +35,10 @@ describe('Currency row tests', () => {
         const { getAllByRole } = render(<CurrencyRow {...props} />)
         expect(getAllByRole('option')[0].textContent).toEqual("EUR")
     })
-    it.skip('should show correct select options - enzyme', async () => {
-        const currencyRow = mount(<CurrencyRow {...props} />)
-        expect(currencyRow.find('select').text).toHaveValue("EUR")
-    })
+    // it('should show correct select options - enzyme', async () => {
+    //     const currencyRow = mount(<CurrencyRow {...props} />)
+    //     expect(currencyRow.find('select').text).toHaveValue("EUR")
+    // })
     it('should show correct select options when select', async () => {
         const { getByRole } = render(<CurrencyRow {...props} />)
         expect(getByRole('combobox')).toBeVisible()
