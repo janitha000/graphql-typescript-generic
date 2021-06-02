@@ -1,7 +1,8 @@
-import { act, fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from "@testing-library/react"
+import { act, fireEvent, getByRole, render, screen, waitFor, waitForDomChange, waitForElementToBeRemoved } from "@testing-library/react"
 import { makeTodos } from './ToDo'
 import TODO from "./ToDo"
 import { title } from "process";
+import React from 'react';
 
 let todos: any;
 let todoCount = 0;
@@ -11,29 +12,24 @@ describe('TODO should render', () => {
         todos = await makeTodos(10)
         todoCount = todos.filter((x: any) => x.completed === true).length;
     })
-    it('should render component', () => {
-        act(() => {
-            render(<TODO />)
-        })
-    })
 
-    it('should show loading', () => {
-        act(() => {
-            render(<TODO />)
-            expect(screen.getByText("Loading...")).toBeInTheDocument()
-        })
 
-    })
+    // beforeEach(() => {
+    //     act(() => {
+    //         render(<TODO />)
+    //     })
+    // })
 
     it('should remove loading', async () => {
-        act(async () => {
+        act(() => {
             render(<TODO />)
-            await waitForElementToBeRemoved(() => screen.getByText("Loading..."))
         })
+        await waitForElementToBeRemoved(() => screen.getByText("Loading..."))
     })
 
     it('should have todos loaded', async () => {
         render(<TODO />)
+
         await waitForElementToBeRemoved(() => screen.getByText("Loading..."))
         todos.slice(0, 15).forEach((td: any) => {
             expect(screen.getByText(td.title)).toBeInTheDocument();
@@ -47,15 +43,17 @@ describe('TODO should render', () => {
         expect(screen.getByText(todoCount)).toBeInTheDocument()
     })
 
-    // it('should reduce no of completed items', async () => {
-    //     const { getByText } = render(<TODO />)
-    //     await waitForElementToBeRemoved(() => screen.getByText("Loading..."))
-    //     fireEvent.click(getByText(todos[0].title))
+    it('should reduce no of completed items', async () => {
+        render(<TODO />)
+        await waitForElementToBeRemoved(() => screen.getByText("Loading..."))
+        fireEvent.click(screen.getAllByRole('checkbox')[0])
+        const completed = await waitFor(() => screen.getByText('9'))
+        expect(completed).toHaveTextContent('9')
 
-    //     const completed = await waitFor(() => getByText('9'))
-    //     expect(completed).toHaveTextContent('9')
+    })
 
-    // })
+
+
 
 
 })

@@ -1,52 +1,52 @@
 import { mount } from "enzyme";
 import useInput from "./useInput";
 import React from 'react';
-import { act } from "@testing-library/react";
+import { renderHook, act } from '@testing-library/react-hooks'
 
 describe('useInput Hook', () => {
-    let results: any;
-    const renderHook = () => {
-        const HookWrapper: React.FC = () => {
-            results = useInput('test')
-            return null;
-        }
+    //let results: any;
+    // const renderHook = () => {
+    //     const HookWrapper: React.FC = () => {
+    //         results = useInput('test')
+    //         return null;
+    //     }
 
-        mount(<HookWrapper />)
-        return results;
-    }
+    //     mount(<HookWrapper />)
+    //     return results;
+    // }
 
     it('should have default value with shared function', () => {
-        renderHook()
-        expect(results.value).toEqual('test')
+        const { result } = renderHook(() => useInput('test'))
+        expect(result.current.value).toEqual('test')
     })
 
 
-    it('should have default value', () => {
-        let globalVal;
-        const HookWrapper: React.FC = () => {
-            let { value } = useInput('test')
-            globalVal = value
-            return null
-        }
+    // it('should have default value', () => {
+    //     let globalVal;
+    //     const HookWrapper: React.FC = () => {
+    //         let { value } = useInput('test')
+    //         globalVal = value
+    //         return null
+    //     }
 
-        mount(<HookWrapper />)
-        expect(globalVal).toEqual('test')
-    })
+    //     mount(<HookWrapper />)
+    //     expect(globalVal).toEqual('test')
+    // })
 
     it('should set the value', () => {
-        renderHook();
+        const { result } = renderHook(() => useInput('test'))
         act(() => {
-            results.setValue('test2')
+            result.current.setValue('test2')
         })
-        expect(results.value).toEqual('test2')
+        expect(result.current.value).toEqual('test2')
     })
 
     it('should reset the value', () => {
-        renderHook();
+        const { result } = renderHook(() => useInput('test'))
         act(() => {
-            results.reset()
+            result.current.reset()
         })
-        expect(results.value).toEqual('')
+        expect(result.current.value).toEqual('')
     })
 
 
