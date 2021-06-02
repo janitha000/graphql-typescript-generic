@@ -2,6 +2,7 @@
 import { useMemo } from 'react'
 import spotifyClient from 'spotify-web-api-node'
 import UseSpotifyAuth from './Login/UseSpotifyAuth'
+import React from 'react'
 
 interface props {
     code: string

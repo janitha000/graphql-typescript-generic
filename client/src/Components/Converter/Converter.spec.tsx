@@ -32,4 +32,12 @@ describe('Convert component testing', () => {
     //     expect(converter.contains('Converter')).toEqual(true)
     //     expect(converter.exists(CurrencyRow)).toEqual(true)
     // })
+
+    it('should render two input fields', () => {
+        let wrapper = mount(<Converter />)
+        console.log(wrapper)
+        wrapper.debug()
+        // expect(wrapper.find('input')).toBeInTheDocument()
+        // console.log(wrapper.find('input'))
+    })
 })

@@ -1,5 +1,5 @@
 import './styles/CurrencyRow.css'
-
+import React from 'react'
 interface props {
     options: (string | undefined)[],
     selectedCurrency: string,

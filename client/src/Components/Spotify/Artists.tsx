@@ -1,4 +1,5 @@
 import './Styles/Spotify.css'
+import React from 'react'
 
 interface props {
     name: string,

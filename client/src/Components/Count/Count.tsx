@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react"
 import { CountContextProvider, UseCounter } from "../../Contexts/CountContext"
 import CountDecrement from "./CountDecrement"
 import CountIncrement from "./CountIncrement"
+import React from 'react'
 
 const CountItem: React.FC = () => {
     const { count } = UseCounter()

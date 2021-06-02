@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
+import React from 'react'
 
 const HooksExample: React.FC = () => {
     const [renderOnce, setRenderOnce] = useState(false)

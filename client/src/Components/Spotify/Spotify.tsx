@@ -3,6 +3,7 @@ import Artist from "./Artists";
 import SpotifyLogin from "./Login/Spotify-Login";
 import UseSpotifyClient from "./SpotifyClient";
 import './Styles/Spotify.css'
+import React from 'react'
 
 interface props {
     code: string

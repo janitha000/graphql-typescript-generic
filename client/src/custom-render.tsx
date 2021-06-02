@@ -1,6 +1,9 @@
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router"
 import { UserContextProvider } from "./Contexts/UserContext"
+import React from 'react'
+
+
 
 const Wrapper = ({ children }: any) => {
     return (

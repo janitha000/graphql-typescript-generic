@@ -1,5 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react"
+import { mount, shallow } from "enzyme"
+import React from 'react'
+
 import Count from "./Count"
+import CountIncrement from "./CountIncrement"
 
 describe('Count component', () => {
     it('it should render ', () => {
@@ -20,11 +24,22 @@ describe('Count component', () => {
 
     it('should decrease the count', () => {
         const { getByText } = render(<Count />)
-        const incrementBtn = getByText('Decrement')
+        const decrementBtn = getByText('Decrement')
 
-        fireEvent.click(incrementBtn)
+        fireEvent.click(decrementBtn)
         expect(getByText('Current value of the counter is -1')).toBeInTheDocument()
-        screen.debug()
+    })
+
+    it('should render two buttons', () => {
+        let wrapper = mount(<Count />)
+        expect(wrapper.find('button').length).toEqual(2)
+    })
+
+    it('should click only once', () => {
+        const setCount = jest.fn()
+        const { getByText } = render(<CountIncrement />)
+
+        fireEvent.click(getByText('Increment'))
 
     })
 

@@ -1,5 +1,6 @@
 import Spotify from "../Spotify";
 import SpotifyLogin from "./Spotify-Login";
+import React from 'react'
 
 const code = new URLSearchParams(window.location.search).get('code')
 
