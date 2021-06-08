@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { UserContext, UserContextProvider } from './Contexts/UserContext';
 import UseEventHandler from './Hooks/useEventListener';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import Vehicles from './Components/Vehicles';
 import Login from './Components/Login/Login'
 import HooksExample from './Components/HooksExample/HooksExample';
@@ -30,6 +30,8 @@ const App: React.FC = (): JSX.Element => {
       <BrowserRouter>
         <UserContextProvider>
           <Suspense fallback={<div>Loading...</div>}>
+
+
             <Switch>
               <Route path='/vehicles' component={Vehicles} />
               <Route path='/login' component={Login} />

@@ -46,6 +46,13 @@ export const VEHICLES: Vehicle[] = [
         year: 2020,
         type: "BENZ",
         price: 31000
+    },
+    {
+
+        name: "E Class",
+        year: 2020,
+        type: "BENZ",
+        price: 38000
     }
 
 ]

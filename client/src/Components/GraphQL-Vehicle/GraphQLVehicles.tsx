@@ -15,12 +15,25 @@ const GET_BRANDS = gql`
             price
         }
         }
+    } 
+`
+
+const GET_BRAND_BY_NAME = gql`
+    query($name: String!){
+        getBrandByName(name: $name){
+        name
+        founded
+        }
     }
-  
 `
 const GraphQLVehicles: React.FC = () => {
-    const { data, isError, isLoading } = useGraphQLQuery('brands', GET_BRANDS)
-    console.log(data)
+    const { data, isError, isLoading, refetch } = useGraphQLQuery('brands', GET_BRANDS)
+
+    const onRefreshClick = () => {
+        console.log('refresh')
+        refetch()
+
+    }
 
     return (
         <div className="gvehicle">
@@ -28,7 +41,7 @@ const GraphQLVehicles: React.FC = () => {
             <div className="gvehicle__items">
                 {isLoading && <div>Loading data...</div>}
                 {isError && <div>Something is wrong.</div>}
-                {data && data.getAllBrands.map((brand: Brand) => (<GBrand {...brand} />))}
+                {data && data.getAllBrands.map((brand: Brand) => (<GBrand brand={brand} onRefresh={onRefreshClick} />))}
 
             </div>
         </div>

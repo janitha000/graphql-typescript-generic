@@ -3,6 +3,7 @@ import { UserContext } from '../../Contexts/UserContext';
 import UseEventHandler from '../../Hooks/useEventListener';
 import Vehicles from '../Vehicles'
 import '../../App.css'
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
     const [time, setTime] = useState<Date>(() => new Date(Date.now()));
@@ -13,7 +14,7 @@ const Home: React.FC = () => {
         alert('clicked from callback')
     }, [])
 
-    UseEventHandler({ eventType: 'click', handler: handlerCallback })
+    // UseEventHandler({ eventType: 'click', handler: handlerCallback })
 
     // UseEventHandler({
     //   eventType: "click", handler: () => {
@@ -46,6 +47,7 @@ const Home: React.FC = () => {
     return (
         <div className="App">
             This is a typescript react
+            <Link to='/gvehicles'>Get Vehicles from API</Link>
             <Vehicles />
             <div className="app__time">{time.toUTCString()}</div>
             {(username) ? <p>{username} logged in</p> : <p>User is not logged in</p>}
