@@ -1,8 +1,9 @@
-import { useContext, useEffect } from "react"
+import { FunctionComponent, ReactElement, useContext, useEffect } from "react"
 import { CountContextProvider, UseCounter } from "../../Contexts/CountContext"
 import CountDecrement from "./CountDecrement"
 import CountIncrement from "./CountIncrement"
 import React from 'react'
+import { ErrorBoundary } from "react-error-boundary"
 
 const CountItem: React.FC = () => {
     const { count } = UseCounter()
@@ -14,8 +15,11 @@ const CountItem: React.FC = () => {
     return (
         <>
             <div className="">Current value of the counter is {count}</div>
-            <CountIncrement />
-            <CountDecrement />
+            <ErrorBoundary fallback={<div>Something went wrong...</div>} >
+                <CountIncrement />
+                <CountDecrement />
+            </ErrorBoundary>
+
         </>
     )
 }
@@ -27,5 +31,15 @@ const Count: React.FC = () => {
         </CountContextProvider>
     )
 }
+
+// const  ErrorFallback: ReactElement<unknown, string | FunctionComponent<{}>> = (type, props, key) =>{
+//     return (
+//       <div role="alert">
+//         <p>Something went wrong:</p>
+//         <pre>{error.message}</pre>
+//         <button onClick={resetErrorBoundary}>Try again</button>
+//       </div>
+//     )
+//   }
 
 export default Count

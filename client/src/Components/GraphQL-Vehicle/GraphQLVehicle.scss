@@ -1,0 +1,39 @@
+.gvehicle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__title{
+        font-size: 2em;
+        font-weight: 700;
+        margin: 1rem 0rem;
+        color: grey;
+    }
+
+    &__items{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+
+        &--brand{
+            height: 300px;
+            width: 300px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 1rem;
+
+            & > h2 {
+                margin: 0;
+            }
+
+            & > h3 {
+                margin: 0;
+                color: grey;
+                font-size: 1em;
+            }
+        }
+    }
+
+
+}
