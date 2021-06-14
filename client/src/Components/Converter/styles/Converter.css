@@ -1,3 +1,7 @@
+.error {
+  color: red;
+}
+
 .converter {
   display: -webkit-box;
   display: -ms-flexbox;

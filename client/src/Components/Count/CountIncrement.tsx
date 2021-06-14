@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useRef } from "react"
+import { useRef } from "react"
 import { UseCounter } from "../../Contexts/CountContext"
 import React from 'react'
 
@@ -16,7 +16,7 @@ const CountIncrement: React.FC = () => {
     // if (renderCount.current === 0)
     //     throw new Error('I crashed!');
 
-
+    console.log('count increment rendered')
 
 
     return (
@@ -24,4 +24,4 @@ const CountIncrement: React.FC = () => {
     )
 }
 
-export default CountIncrement
+export default React.memo(CountIncrement)

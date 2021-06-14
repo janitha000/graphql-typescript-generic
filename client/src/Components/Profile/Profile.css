@@ -1,0 +1,44 @@
+.profile {
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.profile-sections {
+  width: 100vw;
+  height: calc(100vh - 3rem);
+  position: relative;
+  top: 3rem;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+.profile-sections::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.profile-sections > * {
+  width: 100vw;
+  height: calc(100vh - 3rem);
+  scroll-snap-align: start;
+}
+
+.profile__navbar {
+  background: #0767b6;
+  width: 100vw;
+  height: 3rem;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+}
+
+.profile__about {
+  background: #ffb0b0;
+}
+
+.profile__contact {
+  background: #fffab3;
+}
+/*# sourceMappingURL=Profile.css.map */

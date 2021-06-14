@@ -11,4 +11,4 @@ const CountDecrement: React.FC = () => {
     )
 }
 
-export default CountDecrement
+export default React.memo(CountDecrement)

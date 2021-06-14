@@ -19,6 +19,8 @@ import GraphQLVehicles from './Components/GraphQL-Vehicle/GraphQLVehicles';
 
 const ManufacturerComponent = React.lazy(() => import('./Components/VehicleManufacturer/VehicleManufacturer'));
 const Converter = React.lazy(() => import('./Components/Converter/Converter'));
+const BirthDay = React.lazy(() => import('./Components/BirthDay/BirthDay'));
+const Profile = React.lazy(() => import('./Components/Profile/Home'));
 // const GVehicle = React.lazy(() => import('./Components/GraphQL-Vehicle/GraphQLVehicles'))
 
 const queryClient = new QueryClient()
@@ -43,6 +45,8 @@ const App: React.FC = (): JSX.Element => {
               <Route path='/spotifycallback' component={SpotifyLoginCallback} />
               <Route path='/todo' component={TODO} />
               <Route path='/gvehicles' component={GraphQLVehicles} />
+              <Route path='/birthday' component={BirthDay} />
+              <Route path='/profile' component={Profile} />
               <Route path='/' component={Home} />
             </Switch>
           </Suspense>

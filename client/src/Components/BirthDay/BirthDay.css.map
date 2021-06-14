@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,OAAO,CAAC;EACJ,UAAU,ECFQ,OAAiB;CDItC",
+    "sources": [
+        "BirthDay.scss",
+        "../../Styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "BirthDay.css"
+}

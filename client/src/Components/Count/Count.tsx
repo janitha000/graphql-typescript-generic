@@ -15,10 +15,10 @@ const CountItem: React.FC = () => {
     return (
         <>
             <div className="">Current value of the counter is {count}</div>
-            <ErrorBoundary fallback={<div>Something went wrong...</div>} >
-                <CountIncrement />
-                <CountDecrement />
-            </ErrorBoundary>
+            {/* <ErrorBoundary fallback={<div>Something went wrong...</div>} > */}
+            <CountIncrement />
+            <CountDecrement />
+            {/* </ErrorBoundary> */}
 
         </>
     )

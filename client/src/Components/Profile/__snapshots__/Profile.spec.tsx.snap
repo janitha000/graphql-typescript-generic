@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile component should match the snapshots 1`] = `
+<div
+  className="profile"
+>
+  <div
+    className="profile__navbar"
+  >
+    This is nav bar
+  </div>
+  <div
+    className="profile-sections"
+  >
+    <div
+      className="profile__about"
+    >
+      This is about
+    </div>
+    <div
+      className="profile__contact"
+    >
+      This is contact page
+    </div>
+  </div>
+</div>
+`;

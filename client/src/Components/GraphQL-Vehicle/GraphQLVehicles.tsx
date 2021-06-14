@@ -40,7 +40,7 @@ const GraphQLVehicles: React.FC = () => {
             <div className="gvehicle__title">Vehicle Brands</div>
             <div className="gvehicle__items">
                 {isLoading && <div>Loading data...</div>}
-                {isError && <div>Something is wrong.</div>}
+                {isError && <div className="error">Something is wrong.</div>}
                 {data && data.getAllBrands.map((brand: Brand) => (<GBrand brand={brand} onRefresh={onRefreshClick} />))}
 
             </div>
