@@ -11,7 +11,7 @@ export const SPOTIFY_LOGIN = {
         const spotifyAPI = new SpotifyWebAPI({
             redirectUri: 'http://localhost:3000/spotifycallback',
             clientId: '071d2d218882479e965a9c3727fcf74f',
-            clientSecret: '',
+            clientSecret: 'c715e12b8e90462aa14e040761f62a82',
         })
 
         let data = await spotifyAPI.authorizationCodeGrant(code)
@@ -30,7 +30,7 @@ export const SPOTIFY_LOGIN_REFRESH = {
         const spotifyAPI = new SpotifyWebAPI({
             redirectUri: 'http://localhost:3000/spotifycallback',
             clientId: '071d2d218882479e965a9c3727fcf74f',
-            clientSecret: '',
+            clientSecret: 'c715e12b8e90462aa14e040761f62a82',
             refreshToken: refresh_token
         })
         let data = await spotifyAPI.refreshAccessToken()
