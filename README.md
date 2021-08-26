@@ -7,3 +7,5 @@ This is the wron
 this is correct
 
 a new commit
+
+![Visualization of the codebase](./diagram.svg)
